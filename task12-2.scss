@@ -1,0 +1,149 @@
+$themecolor: rgb(95,192,205);
+$btncolor: rgb(85,168,179);
+$whitecolor: #ffffff;
+$impcolor: rgb(226,97,99);
+$cont-color: rgb(225,229,231);
+$img-color: rgb(239,229,239);
+$textcolor: rgb(153,153,153);
+$backgroundcolor: rgb(248,250,251);
+%themestyle{
+    background-color: $themecolor;
+    color: $whitecolor;
+    padding: 2vh 2vw;
+}
+%cont-row{
+    padding: 3vh 0;
+    border-bottom: thin solid $cont-color;
+}
+%cont-row-padmar{
+    margin-left: 4vw;
+    padding-left: 4vw;
+}
+@mixin flexstyle($justify){
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: $justify;
+}
+@mixin bkgimg($url){
+    width: 2em;
+    height: 2em;
+    background: url($url) no-repeat center;
+}
+.header-box{
+    width: 100vw;
+    background-color: $themecolor;
+    padding: 2vh 0;
+    position: relative;
+}
+.header-button{
+    width: 40vw;
+    text-align: center;
+    background-color: $btncolor;
+    margin: 0 30vw;
+    height: 5vh;
+    @include flexstyle(space-between);
+    border-radius: .4em;
+}
+.left-btn,.right-btn{
+    height: 5vh;
+    width: 20vw;
+    border: none;
+    border-radius: .4em;
+}
+.left-btn{
+    background-color: $btncolor;
+    color: $whitecolor;
+}
+.right-btn{
+    background-color: $whitecolor;
+    color: $themecolor;
+}
+.header-lctimg{
+    width: 2em;
+    height: 2em;
+    background: url("images/task5-2_03.png") no-repeat center;
+    position: absolute;
+    top: 2vh;
+    right: 5vw;
+}
+.slct-box{
+    width: 100vw;
+    padding: 2vh 0;
+    @include flexstyle(space-around);
+    border-bottom: thin solid $cont-color;
+    color: $textcolor;
+    font-weight: 100;
+    font-size: .9em;
+}
+select{
+    width: 30vw;
+    border: none;
+    padding-left: 10vw;
+}
+.slct-lct,.slct-eatlive{
+    border-right: thin solid $cont-color;
+}
+a:link,a:visited{
+    color:#444;
+    text-decoration:none;
+}
+.cont-row{
+    width: 100vw;
+    padding: 1vh 5vw;
+    border-bottom: thin solid $cont-color;
+    font-size: .9em;
+}
+.cont-menu,.cont-lct{
+    @include flexstyle(flex-start);
+    margin-bottom: 1vh;
+}
+.cont-menu-img,.cont-lct-img{
+    width: 1em;
+    height: 1em;
+}
+.cont-menu-img{
+    background: url("images/task5-2_11.png") no-repeat center;
+}
+.cont-menu-text,.cont-lct-text{
+    margin-left: 1vw;
+    height: 1em;
+    line-height: 1em;
+    color: $textcolor;
+}
+.cont-date{
+    @include flexstyle(space-between);
+    margin-bottom: 1vh;
+}
+.cont-date-left{
+    text-indent: 3vw;
+}
+.cont-date-right{
+    color: $impcolor;
+    & > span {
+        color: $themecolor;
+    }
+}
+.cont-lct-img{
+    background: url("images/task5-2_15.png") no-repeat center;
+}
+.footer-box{
+    width: 100vw;
+    border-top: thin solid $cont-color;
+    @include flexstyle(space-around);
+    background-color: $backgroundcolor;
+    position: fixed;
+    bottom: 0;
+    padding: .5vh 2vw;
+}
+.footer-home-img{
+    @include bkgimg("images/task5-2_22.png");
+}
+.footer-mine-img{
+    @include bkgimg("images/task5-2_19.png");
+}
+.footer-write{
+    width: 3.5em;
+    height: 3.5em;
+    background: url("images/task5-2_24.png") no-repeat .9em .6em $themecolor;
+    border-radius: 50%;
+}
